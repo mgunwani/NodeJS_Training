@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>Employee Detail</h2>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            Details of <b>
+                <%= emp.name %>
+            </b>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Employee Name : <%= emp.name %>
+            </li>
+            <li class="list-group-item">Employee Address : <%= emp.address %>
+            </li>
+            <li class="list-group-item">Employee Position : <%= emp.position %>
+            </li>
+            <li class="list-group-item">Employee Salary : <%= emp.salary %>
+            </li>
+        </ul>
+        <div class="card-footer">
+            <a class="btn btn-secondary" href="/employees/">Back to List</a>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

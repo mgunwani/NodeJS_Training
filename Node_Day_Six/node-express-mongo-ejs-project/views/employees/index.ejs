@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>Employee List</h2>
+
+    <a href="/employees/create" class="btn btn-secondary">Add New Employee</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Employee Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0;i<empData.length;i++) { %>
+                <tr>
+                    <td>
+                        <%= empData[i].name %>
+                    </td>
+                    <td>
+                        <%= empData[i].address %>
+                    </td>
+                    <td>
+                        <%= empData[i].position %>
+                    </td>
+                    <td>
+                        <a href="/employees/show/<%= empData[i]._id %>">View Details</a>
+                    </td>
+                </tr>
+                <% }%>
+        </tbody>
+    </table>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
