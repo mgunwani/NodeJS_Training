@@ -24,23 +24,36 @@ employeeController.createEmployee = function (req, res) {
 }
 
 employeeController.saveEmployee = function (req, res) {
-    Employee.create(req.body, (err) => {
+    var employee = new Employee(req.body);
+    Employee.create(employee, (err, employee) => {
         if (err) throw err;
-        res.send('Employee Saved Successfully to DB!!');
+        console.log('Employee Saved Successfully to DB!!');
+        // res.redirect("/employees");
+        res.redirect("/employees/show/" + employee._id);
     });
 }
 
 employeeController.deleteEmployee = function (req, res) {
     Employee.findByIdAndRemove(req.params.id, (err) => {
         if (err) throw err;
-        res.send('Employee Deleted Successfully from DB!!');
+        console.log('Employee Deleted Successfully from DB!!');
+        res.redirect("/employees");
+    })
+}
+
+employeeController.editEmployee = function (req, res) {
+    Employee.findById(req.params.id, function (err, employee) {
+        if (err) throw err;
+        console.log(employee);
+        res.render("../views/employees/edit", { emp: employee });
     })
 }
 
 employeeController.updateEmployee = function (req, res) {
     Employee.findByIdAndUpdate(req.params.id, req.body, (err) => {
         if (err) throw err;
-        res.send('Employee Updated Successfully to DB!!')
+        console.log('Employee Updated Successfully to DB!!')
+        res.redirect("/employees");
     })
 }
 
