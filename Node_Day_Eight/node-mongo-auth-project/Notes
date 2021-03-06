@@ -1,0 +1,7 @@
+
+express, mongoose, jsonwebtoken, brycptjs, cors
+
+Configure Auth Key:
+
+    jsonwebtoken function such as verfiy() and sign() use algorithm that need a secret Key
+    as String to encode and decode token.

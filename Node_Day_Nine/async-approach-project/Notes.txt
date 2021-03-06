@@ -1,0 +1,44 @@
+
+Async Approach:
+
+    In this approach, the lines of code executed in different 
+    order than the one in which they are written.
+
+Sync Approach:
+
+    In this approach, the code is executed line by line. They execute
+    in the order in which they are written. 
+
+-------------------------------------
+
+Callback hell:
+
+doSomething1(()=>{
+    doSomething2(() => {
+        doSomething3(() => {
+            doSomething4(() => {
+
+            })
+        })
+    })
+})
+
+Use Promises for Conscise Async Programing:
+
+promiseFunction()
+    .then(fulfilledCallback)
+    .then(fulfilledCallback)
+    .catch(rejectedCallback)
+
+Async/Await Keyword for Async-Programming:
+
+async function() {
+    await [Async Action]
+}
+
+
+
+
+
+
+
